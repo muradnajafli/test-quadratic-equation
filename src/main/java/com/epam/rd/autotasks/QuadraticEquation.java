@@ -9,16 +9,12 @@ public class QuadraticEquation {
         if (disc > 0) {
             double x1 = (-b + Math.sqrt(disc)) / (2 * a);
             double x2 = (-b - Math.sqrt(disc)) / (2 * a);
-            return x1 + " " + x2;
+            return String.format("%s %s", x1, x2);
         } else if (disc == 0) {
-            double x = (-b / 2 * a);
-            return String.valueOf(x);
+            double x = (-b) / (2 * a);
+            return String.format("%s", x);
         } else {
             return "no roots";
         }
-
     }
 }
-//    {
-//        throw new UnsupportedOperationException();
-//    }

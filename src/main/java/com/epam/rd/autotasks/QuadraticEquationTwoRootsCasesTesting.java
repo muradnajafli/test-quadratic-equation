@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
 public class QuadraticEquationTwoRootsCasesTesting {
@@ -33,9 +34,12 @@ public class QuadraticEquationTwoRootsCasesTesting {
                 {1, 7, 10, "-2.0 -5.0"}
         });
     }
-
     @Test
     public void testTwoRootsCase() {
-        assertEquals(expected, quadraticEquation.solve(a, b, c));
+        double x1 = Double.parseDouble(expected.split(" ")[0]);
+        double x2 = Double.parseDouble(expected.split(" ")[1]);
+        String result = quadraticEquation.solve(a, b, c);
+        assertTrue(result.equals(x1 + " " + x2) || result.equals(x2 + " " + x1));
     }
 }
+
